@@ -5,7 +5,7 @@
 This game demonstrates the use of Unity's Tilemap system to create a dynamic and engaging gameplay experience.  
 Players take control of the main character, navigating a tile-based map while attempting to evade a pursuing enemy.<br>
 Move the character using the **arrow keys**, strategize your escape, and face the challenges the game presents!
-
+- [Click Here to Play ](https://tomgoz.itch.io/tilemapalgo)
 ---
 
 ## Explanation of the Scripts
