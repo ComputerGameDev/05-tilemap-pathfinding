@@ -10,4 +10,6 @@
  */
 public interface IGraph<T> {
     IEnumerable<T> Neighbors(T node);
+    int GetWeight(T node);
+
 }

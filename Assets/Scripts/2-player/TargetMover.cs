@@ -53,6 +53,8 @@ public class TargetMover: MonoBehaviour {
         }
     }
 
+    //BFS
+/*
     private void MakeOneStepTowardsTheTarget() {
         Vector3Int startNode = tilemap.WorldToCell(transform.position);
         Vector3Int endNode = targetInGrid;
@@ -68,4 +70,19 @@ public class TargetMover: MonoBehaviour {
             atTarget = true;
         }
     }
+*/
+    //Dijkstra
+    private void MakeOneStepTowardsTheTarget() {
+        Vector3Int startNode = tilemap.WorldToCell(transform.position);
+        Vector3Int endNode = targetInGrid;
+        List<Vector3Int> shortestPath = Dijkstra.GetPath(tilemapGraph, startNode, endNode);
+        Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
+        if (shortestPath.Count >= 2) { 
+            Vector3Int nextNode = shortestPath[1];
+            transform.position = tilemap.GetCellCenterWorld(nextNode);
+        } else {
+            atTarget = true;
+        }
+    }
 }
+

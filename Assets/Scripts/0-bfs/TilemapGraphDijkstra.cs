@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -6,11 +6,19 @@ using UnityEngine.Tilemaps;
 /**
  * A graph that represents a tilemap, using only the allowed tiles.
  */
-public class TilemapGraph: IGraph<Vector3Int> {
+public class TilemapGraphDijkstra: IGraph<Vector3Int> {
     private Tilemap tilemap;
     private TileBase[] allowedTiles;
+    Dictionary<string, int> tileWeights = new Dictionary<string, int>()
+    {
+        {"Grass", 1},
+        {"Swamp", 2},
+        {"bushes", 3},
+        {"Hills", 4},
+    };
 
-    public TilemapGraph(Tilemap tilemap, TileBase[] allowedTiles) {
+
+    public TilemapGraphDijkstra(Tilemap tilemap, TileBase[] allowedTiles) {
         this.tilemap = tilemap;
         this.allowedTiles = allowedTiles;
     }
@@ -30,8 +38,16 @@ public class TilemapGraph: IGraph<Vector3Int> {
                 yield return neighborPos;
         }
     }
-        public int GetWeight (Vector3Int node){
-            return 1 ;
-        }
 
+        public int GetWeight(Vector3Int node) {
+        TileBase tile = tilemap.GetTile(node);
+        if (tile != null) {
+            string tileName = tile.name;
+            if (tileWeights.ContainsKey(tileName)) {
+                return tileWeights[tileName];
+            }
+        }
+        return int.MaxValue;
+    }
 }
+
