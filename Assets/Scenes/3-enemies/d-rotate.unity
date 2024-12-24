@@ -2623,6 +2623,8 @@ GameObject:
   - component: {fileID: 1373858625}
   - component: {fileID: 1373858627}
   - component: {fileID: 1373858624}
+  - component: {fileID: 1373858628}
+  - component: {fileID: 1373858629}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -2713,9 +2715,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee853ba9ff93a4d448b83af8995875a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToWatch: 5
-  probabilityToRotate: 0.2
-  probabilityToStopRotating: 0.2
+  baseRadius: 5
+  pulseAmplitude: 2
+  pulseSpeed: 2
+  radiusToTeleport: 12
+  probabilityToBeInvisible: 0.3
+  probabilityToStopBeInvisible: 0.4
 --- !u!114 &1373858625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2768,9 +2773,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9790ede6c8fc5f40a0c5b038a993280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minAngle: -30
-  maxAngle: 30
+  minAngle: 0
+  maxAngle: 0
   angularVelocity: {x: 0, y: 60, z: 0}
+--- !u!114 &1373858628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373858621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca95ca9d42aaf47798bd2b81fa89c28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 790962201}
+  teleportDelay: 2
+--- !u!114 &1373858629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373858621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6092f6f12ed44e8b1852f6fb90f71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572995961
 GameObject:
   m_ObjectHideFlags: 0
