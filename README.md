@@ -43,7 +43,7 @@ ___
 
 # Part B : Dijkstra Algorithm
 
-## 1. TileMapForDijkstra
+## 1. TileMapDijkstra
 **Purpose:**  
 This script extends the functionality of a regular Tilemap by introducing a Dictionary to manage weights for different types of tiles. It is essential for Dijkstra's algorithm, as it calculates the cost of movement across the map.
 
@@ -59,7 +59,7 @@ This script extends the functionality of a regular Tilemap by introducing a Dict
 
 ### Usage:
 This script provides tile weights to Dijkstra's algorithm, ensuring paths are selected based on movement costs.
-- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/3-enemies/EnemyControllerStateMachine.cs)
+- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/0-bfs/TilemapGraphDijkstra.cs)
 
 ---
 
@@ -77,10 +77,10 @@ An interface that abstracts graph operations, allowing different graph implement
 ### Usage:
 Ensures consistency across graph implementations, making them compatible with Dijkstra's algorithm.
 
-- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/3-enemies/EnemyControllerStateMachine.cs)
+- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/0-bfs/IGraph.cs)
 ---
 
-## 3. Dijkstra
+## 3. DijkstraAlgorithm
 **Purpose:**  
 Implements Dijkstra's algorithm to compute the shortest path between two nodes. It leverages weights from TileMapForDijkstra to calculate path costs.
 
@@ -100,7 +100,7 @@ Implements Dijkstra's algorithm to compute the shortest path between two nodes. 
 ### Usage:
 The core of the pathfinding system, enabling efficient path calculation on weighted maps.
 
-- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/3-enemies/EnemyControllerStateMachine.cs)
+- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/0-bfs/DijkstraAlgorithm.cs)
 ---
 
 ## 4. TargetMover
@@ -122,7 +122,7 @@ Integrates Dijkstra's algorithm into gameplay by moving objects (e.g., enemies o
 ### Usage:
 Connects pathfinding results to actionable movement, creating dynamic behavior for objects in the game.
 
-- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/3-enemies/EnemyControllerStateMachine.cs)
+- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/2-player/TargetMover.cs)
 ---
 
 ## 5. PriorityQueue
@@ -139,7 +139,7 @@ Implements a priority queue data structure, essential for Dijkstra’s algorithm
 ### Usage:
 The PriorityQueue is critical to Dijkstra’s efficiency, enabling fast retrieval of the next node.
 
-- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/3-enemies/EnemyControllerStateMachine.cs
+- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/0-bfs/PriorityQueue.cs)
 ---
 
 # How It All Fits Together
@@ -158,5 +158,3 @@ The PriorityQueue is critical to Dijkstra’s efficiency, enabling fast retrieva
 
 5. **PriorityQueue:**  
    Optimizes Dijkstra’s performance by processing nodes with the lowest cost first.
-
-- [View the script here](https://github.com/ComputerGameDev/05-tilemap-pathfinding/blob/master/Assets/Scripts/3-enemies/EnemyControllerStateMachine.cs)
