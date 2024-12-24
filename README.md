@@ -53,8 +53,8 @@ This script extends the functionality of a regular Tilemap by introducing a Dict
 - **Tile Weights**:  
   A Dictionary maps tile types (or positions) to their weights:
   - Grass: 1
-  - Hill: 3
-  - Water: 5
+  - Hill:  2
+  - Water: 3
 
 - **GetWeights Function**:  
   Retrieves the weight of a tile at a specific position, enabling accurate cost calculations.
